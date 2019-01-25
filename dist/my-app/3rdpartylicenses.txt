@@ -352,23 +352,31 @@ MIT
 
 @angular/material/card
 
+@angular/forms
+MIT
+
 @angular/animations
 MIT
 
+@angular/material/core
+
+@angular/material/list
+
+@angular/material/form-field
+
 @angular/material/button
+
+@angular/material/chips
+
+@angular/material/divider
+
+@angular/material/tabs
 
 @angular/material/icon
 
 @angular/material/sidenav
 
 @angular/material/toolbar
-
-@angular/forms
-MIT
-
-@angular/material/core
-
-@angular/material/list
 
 @angular/service-worker
 MIT
