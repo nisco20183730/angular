@@ -7,13 +7,18 @@
       <p>1/26はメンテナンスのため、全日使用できません。</p>
     </mat-card-content>
   </mat-card>
-  <br>
-  <div class="list-group">
-    <a routerLink="/search" class="list-group-item list-group-item-action">カンバン表示（材番指定）</a>
-    <a href="#" class="list-group-item list-group-item-action disabled">工番</a>
-    <a href="#" class="list-group-item list-group-item-action disabled">見積</a>
-    <a href="#" class="list-group-item list-group-item-action disabled">実績入力</a>
-  </div><!-- /.list -->
+  <mat-nav-list>
+    <!-- <mat-list-item *ngFor="let link of links">
+      <a matLine href="...">{{ link }}</a>
+      <button mat-icon-button (click)="showInfo(link)">
+        <mat-icon>info</mat-icon>
+      </button>
+    </mat-list-item> -->
+    <a mat-list-item routerLink="/search">カンバン表示（材番指定）</a>
+    <a mat-list-item routerLink="/search">工番</a>
+    <a mat-list-item routerLink="/search">見積</a>
+    <a mat-list-item routerLink="/search">実績入力</a>
+  </mat-nav-list>
   <hr>
   <!-- FOOTER -->
   <footer class="container">

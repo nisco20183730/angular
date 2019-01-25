@@ -14,14 +14,18 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Angular Material
 import { MatIconModule,
+          MatChipsModule,
           MatButtonModule,
           MatCardModule,
+          MatFormFieldModule,
+          MatInputModule,
           MatListModule,
           MatSidenavModule,
-          MatToolbarModule
+          MatTabsModule,
+          MatToolbarModule,
         } from '@angular/material';
 
 @NgModule({
@@ -39,14 +43,18 @@ import { MatIconModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     RouterModule,
     BrowserAnimationsModule,
-    // FormsModule,
-    // ReactiveFormsModule,
+    FormsModule,
+    ReactiveFormsModule,
     // Angular Material --------------------
     MatIconModule,
     MatButtonModule,
     MatCardModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatListModule,
     MatSidenavModule,
+    MatTabsModule,
     MatToolbarModule,
   ],
   providers: [],
