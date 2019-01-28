@@ -5,40 +5,19 @@
       <input matInput placeholder="99D9999-01-001-001">
     </mat-form-field><!-- /.form -->
     <button mat-raised-button type="submit">次へ</button>
+    <!-- /.form -->
+    <!-- データのキャッシュ -->
   </div>
   <br>
   <mat-nav-list>
-    <mat-list-item routerLink="/base">
-      <mat-chip-list>
+    <mat-list-item routerLink="/base" *ngFor="let data of dataSource">
+      <mat-chip-list *ngIf="data.ren">
         <mat-chip>連結</mat-chip>
       </mat-chip-list> 
-      <p matLine>工番：FL99-9999 符号：001 </p>
-      <p matLine>材番：99D9999-01-001-001</p>
-      <p matLine>品名：PB ROLL</p>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item routerLink="/base">
-      <p matLine>工番：FL99-9999 符号：001 </p>
-      <p matLine>材番：99D9999-01-001-001</p>
-      <p matLine>品名：PB ROLL</p>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item routerLink="/base">
-      <p matLine>工番：FL99-9999 符号：001 </p>
-      <p matLine>材番：99D9999-01-001-001</p>
-      <p matLine>品名：PB ROLL</p>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item routerLink="/base">
-      <p matLine>工番：FL99-9999 符号：001 </p>
-      <p matLine>材番：99D9999-01-001-001</p>
-      <p matLine>品名：PB ROLL</p>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item routerLink="/base">
-      <p matLine>工番：FL99-9999 符号：001 </p>
-      <p matLine>材番：99D9999-01-001-001</p>
-      <p matLine>品名：PB ROLL</p>
+      <p matLine>工番：{{data.kouji_no}} 符号：{{data.fugou}} </p>
+      <p matLine>材番：{{data.zaiban}}</p>
+      <p matLine>品名：{{data.hinmei}}</p>
+      <mat-divider></mat-divider>
     </mat-list-item>
   </mat-nav-list>
 </main>

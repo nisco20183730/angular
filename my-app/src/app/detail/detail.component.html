@@ -2,418 +2,175 @@
   <mat-tab-group mat-align-tabs="center" animationDuration="0ms" dynamicHeight>
     <!-- 計画 -->
     <mat-tab label="計画">
-        <mat-card>
-            <mat-card-content>
-                <table class="table table-sm table-borderless mb-0">
+      <mat-card>
+        <mat-card-content>
+          <table class="table table-sm table-borderless mb-0">
+            <tr>
+              <th scope="row">工番　　：</th>
+              <td>{{dataSource.kouji_no}}</td>
+            </tr>
+            <tr>
+              <th scope="row">符号　　：</th>
+              <td>{{dataSource.fugou_1}}-{{dataSource.fugou_2}}</td>
+            </tr>
+            <tr>
+              <th scope="row">材料番号：</th>
+              <td>{{dataSource.zaiban}}</td>
+            </tr>
+          </table>
+        </mat-card-content>
+      </mat-card>
+      <!-- <ng-template matTabContent>基本</ng-template> -->
+      <mat-card>
+        <mat-card-content>
+          <mat-tab-group headerPosition="below" dynamicHeight>
+            <mat-tab label="{{i+1}}" *ngFor="let keikaku of dataSource.keikaku_info; let i = index">
+              <mat-card>
+                <mat-card-content>
+                  <table class="table table-sm table-borderless mb-0">
                     <tr>
-                      <th scope="row">工番　　：</th>
-                      <td>FL99-9999</td>
+                      <th scope="row">工程　　：</th>
+                      <td colspan="3">{{keikaku.koutei_no}}：{{keikaku.koutei_name}}</td>
                     </tr>
                     <tr>
-                      <th scope="row">符号　　：</th>
-                      <td>001-001</td>
+                      <th scope="row">計画開始：</th>
+                      <td colspan="3">{{keikaku.start_date}}</td>
                     </tr>
                     <tr>
-                      <th scope="row">材料番号：</th>
-                      <td>99D9999-01-001-002</td>
+                      <th scope="row">計画終了：</th>
+                      <td colspan="3">{{keikaku.end_date}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">製造時間：</th>
+                      <td>{{keikaku.production_time}}</td>
+                      <th>単位：</th>
+                      <td>{{keikaku.unit}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">資源：</th>
+                      <td colspan="3">{{keikaku.resource}}</td>
                     </tr>
                   </table>
-            </mat-card-content>
-          </mat-card>
-          <!-- <ng-template matTabContent>基本</ng-template> -->
-          <mat-card>
-              <mat-card-content>
-                <mat-tab-group dynamicHeight>
-                  <mat-tab label="010">
-                    <mat-card>
-                      <mat-card-content>
-                          <table class="table table-sm table-borderless mb-0">
-                              <tr>
-                                <th scope="row">工程　　：</th>
-                                <td colspan="3">010：鋳込み～焼鈍終了</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">計画開始：</th>
-                                <td colspan="3">2018/12/20 15：00：00</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">計画終了：</th>
-                                <td colspan="3">2018/12/20 15：00：00</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">製造時間：</th>
-                                <td>999</td>
-                                <th>単位：</th>
-                                <td>時間</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">資源：</th>
-                                <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                              </tr>
-                            </table>
-          
-
-
-                      </mat-card-content>
-                    </mat-card>
-                    <mat-card>
-                        <mat-card-header>
-                            <mat-card-title>ユーザ指定</mat-card-title>
-                          </mat-card-header>
-                                        <mat-card-content>
-                          <table class="table table-sm table-borderless mb-0">
-                              <tr>
-                                <th scope="row">計画開始：</th>
-                                <td colspan="3">2018/12/20 15：00：00</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">計画終了：</th>
-                                <td colspan="3">2018/12/20 15：00：00</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">製造時間：</th>
-                                <td>999</td>
-                                <th>単位：</th>
-                                <td>時間</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">コメント：</th>
-                                <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">検査場所：</th>
-                                <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                              </tr>
-                            </table>
-            
-                      </mat-card-content>
-                    </mat-card>
-                  </mat-tab>
-                  <mat-tab label="020">
-                      <mat-card>
-                        <mat-card-content>
-                            <table class="table table-sm table-borderless mb-0">
-                                <tr>
-                                  <th scope="row">工程　　：</th>
-                                  <td colspan="3">010：鋳込み～焼鈍終了</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">計画開始：</th>
-                                  <td colspan="3">2018/12/20 15：00：00</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">計画終了：</th>
-                                  <td colspan="3">2018/12/20 15：00：00</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">製造時間：</th>
-                                  <td>999</td>
-                                  <th>単位：</th>
-                                  <td>時間</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">資源：</th>
-                                  <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                                </tr>
-                              </table>
-            
-  
-  
-                        </mat-card-content>
-                      </mat-card>
-                      <mat-card>
-                          <mat-card-header>
-                              <mat-card-title>ユーザ指定</mat-card-title>
-                            </mat-card-header>
-                                          <mat-card-content>
-                            <table class="table table-sm table-borderless mb-0">
-                                <tr>
-                                  <th scope="row">計画開始：</th>
-                                  <td colspan="3">2018/12/20 15：00：00</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">計画終了：</th>
-                                  <td colspan="3">2018/12/20 15：00：00</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">製造時間：</th>
-                                  <td>999</td>
-                                  <th>単位：</th>
-                                  <td>時間</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">コメント：</th>
-                                  <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">検査場所：</th>
-                                  <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                                </tr>
-                              </table>
-              
-                        </mat-card-content>
-                      </mat-card>
-                    </mat-tab>
-                  <mat-tab label="030">
-                    <mat-card>
-                      <mat-card-content>
-                          <table class="table table-sm table-borderless mb-0">
-                              <tr>
-                                <th scope="row">工程　　：</th>
-                                <td colspan="3">010：鋳込み～焼鈍終了</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">計画開始：</th>
-                                <td colspan="3">2018/12/20 15：00：00</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">計画終了：</th>
-                                <td colspan="3">2018/12/20 15：00：00</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">製造時間：</th>
-                                <td>999</td>
-                                <th>単位：</th>
-                                <td>時間</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">資源：</th>
-                                <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                              </tr>
-                            </table>
-          
-
-
-                      </mat-card-content>
-                    </mat-card>
-                    <mat-card>
-                        <mat-card-header>
-                            <mat-card-title>ユーザ指定</mat-card-title>
-                          </mat-card-header>
-                                        <mat-card-content>
-                          <table class="table table-sm table-borderless mb-0">
-                              <tr>
-                                <th scope="row">計画開始：</th>
-                                <td colspan="3">2018/12/20 15：00：00</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">計画終了：</th>
-                                <td colspan="3">2018/12/20 15：00：00</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">製造時間：</th>
-                                <td>999</td>
-                                <th>単位：</th>
-                                <td>時間</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">コメント：</th>
-                                <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">検査場所：</th>
-                                <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                              </tr>
-                            </table>
-            
-                      </mat-card-content>
-                    </mat-card>
-                  </mat-tab>
-                  </mat-tab-group>
-              </mat-card-content>
-            </mat-card>
-      
+                </mat-card-content>
+              </mat-card>
+              <mat-card>
+                <mat-card-header>
+                  <mat-card-title>ユーザ指定</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                  <table class="table table-sm table-borderless mb-0">
+                    <tr>
+                      <th scope="row">計画開始：</th>
+                      <td colspan="3">{{keikaku.user_start_date}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">計画終了：</th>
+                      <td colspan="3">{{keikaku.user_end_date}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">製造時間：</th>
+                      <td>{{keikaku.user_production_time}}</td>
+                      <th>単位：</th>
+                      <td>{{keikaku.user_unit}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">資源：</th>
+                      <td colspan="3">{{keikaku.user_resource}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">コメント：</th>
+                      <td colspan="3">{{keikaku.keikaku_comment}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">検査場所：</th>
+                      <td colspan="3">{{keikaku.inspection_place}}</td>
+                    </tr>
+                  </table>
+                </mat-card-content>
+              </mat-card>
+            </mat-tab>
+          </mat-tab-group>
+        </mat-card-content>
+      </mat-card>
     </mat-tab> <!-- 計画 -->
     <!-- 実績 -->
     <mat-tab label="実績">
       <!-- <ng-template matTabContent>工程</ng-template> -->
       <mat-card>
         <mat-card-content>
-            <table class="table table-sm table-borderless mb-0">
-                <tr>
-                  <th scope="row">工番　　：</th>
-                  <td>FL99-9999</td>
-                </tr>
-                <tr>
-                  <th scope="row">符号　　：</th>
-                  <td>001-001</td>
-                </tr>
-                <tr>
-                  <th scope="row">材料番号：</th>
-                  <td>99D9999-01-001-002</td>
-                </tr>
-              </table>
+          <table class="table table-sm table-borderless mb-0">
+            <tr>
+              <th scope="row">工番　　：</th>
+              <td>{{dataSource.kouji_no}}</td>
+            </tr>
+            <tr>
+              <th scope="row">符号　　：</th>
+              <td>{{dataSource.fugou_1}}-{{dataSource.fugou_2}}</td>
+            </tr>
+            <tr>
+              <th scope="row">材料番号：</th>
+              <td>{{dataSource.zaiban}}</td>
+            </tr>
+          </table>
         </mat-card-content>
       </mat-card>
       <mat-card>
         <mat-card-content>
-          <mat-tab-group dynamicHeight>
-            <mat-tab label="010">
-                <mat-card>
-                    <mat-card-content>
-                        <table class="table table-sm table-borderless mb-0">
-                            <tr>
-                              <th scope="row">工程　　：</th>
-                              <td>010：鋳込み～焼鈍終了</td>
-                            </tr>
-                          </table>
-                            </mat-card-content>
-                  </mat-card>
+          <mat-tab-group headerPosition="below" dynamicHeight>
+            <mat-tab label="{{j+1}}" *ngFor="let jisseki of dataSource.jisseki_info; let j = index">
               <mat-card>
                 <mat-card-content>
-                    <table class="table table-sm table-borderless mb-0">
-                        <tr>
-                          <th scope="row">実績開始：</th>
-                          <td colspan="3">2018/12/20 15：00：00</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">実績終了：</th>
-                          <td colspan="3">2018/12/20 15：00：00</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">ステータス：</th>
-                          <td>着手</td>
-                          <th>進捗：</th>
-                          <td>99％</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">資源：</th>
-                          <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">コメント：</th>
-                          <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">検査コメント：</th>
-                          <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">検査結果：</th>
-                          <td colspan="3">（OK）</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">製品部コメント：</th>
-                          <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">対応：</th>
-                          <td colspan="3">（△△△△△）</td>
-                        </tr>
-                      </table>
-                    </mat-card-content>
+                  <table class="table table-sm table-borderless mb-0">
+                    <tr>
+                      <th scope="row">工程　　：</th>
+                      <td>{{jisseki.koutei_no}}：{{jisseki.koutei_name}}</td>
+                    </tr>
+                  </table>
+                </mat-card-content>
               </mat-card>
-            </mat-tab>
-            <mat-tab label="020">
-                <mat-card>
-                    <mat-card-content>
-                        <table class="table table-sm table-borderless mb-0">
-                            <tr>
-                              <th scope="row">工程　　：</th>
-                              <td>010：鋳込み～焼鈍終了</td>
-                            </tr>
-                          </table>
-                            </mat-card-content>
-                  </mat-card>
               <mat-card>
                 <mat-card-content>
-                    <table class="table table-sm table-borderless mb-0">
-                        <tr>
-                          <th scope="row">実績開始：</th>
-                          <td colspan="3">2018/12/20 15：00：00</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">実績終了：</th>
-                          <td colspan="3">2018/12/20 15：00：00</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">ステータス：</th>
-                          <td>着手</td>
-                          <th>進捗：</th>
-                          <td>99％</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">資源：</th>
-                          <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">コメント：</th>
-                          <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">検査コメント：</th>
-                          <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">検査結果：</th>
-                          <td colspan="3">（OK）</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">製品部コメント：</th>
-                          <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">対応：</th>
-                          <td colspan="3">（△△△△△）</td>
-                        </tr>
-                      </table>
-                    </mat-card-content>
-              </mat-card>
-            </mat-tab>
-            <mat-tab label="030">
-                <mat-card>
-                    <mat-card-content>
-                        <table class="table table-sm table-borderless mb-0">
-                            <tr>
-                              <th scope="row">工程　　：</th>
-                              <td>010：鋳込み～焼鈍終了</td>
-                            </tr>
-                          </table>
-                            </mat-card-content>
-                  </mat-card>
-              <mat-card>
-                <mat-card-content>
-                    <table class="table table-sm table-borderless mb-0">
-                        <tr>
-                          <th scope="row">実績開始：</th>
-                          <td colspan="3">2018/12/20 15：00：00</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">実績終了：</th>
-                          <td colspan="3">2018/12/20 15：00：00</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">ステータス：</th>
-                          <td>着手</td>
-                          <th>進捗：</th>
-                          <td>99％</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">資源：</th>
-                          <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">コメント：</th>
-                          <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">検査コメント：</th>
-                          <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">検査結果：</th>
-                          <td colspan="3">（OK）</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">製品部コメント：</th>
-                          <td colspan="3">〇〇〇〇〇〇〇〇〇〇〇</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">対応：</th>
-                          <td colspan="3">（△△△△△）</td>
-                        </tr>
-                      </table>
-                    </mat-card-content>
+                  <table class="table table-sm table-borderless mb-0">
+                    <tr>
+                      <th scope="row">実績開始：</th>
+                      <td colspan="3">{{jisseki.jisseki_start_date}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">実績終了：</th>
+                      <td colspan="3">{{jisseki.jisseki_end_date}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ステータス：</th>
+                      <td>{{jisseki.status}}</td>
+                      <th>進捗：</th>
+                      <td>{{jisseki.progress}} %</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">資源：</th>
+                      <td colspan="3">{{jisseki.jisseki_resource}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">コメント：</th>
+                      <td colspan="3">{{jisseki.jisseki_comment}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">検査コメント：</th>
+                      <td colspan="3">{{jisseki.inspection_comment}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">検査結果：</th>
+                      <td colspan="3">（{{jisseki.jisseki_result}}）</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">製品部コメント：</th>
+                      <td colspan="3">{{jisseki.product_comment}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">対応：</th>
+                      <td colspan="3">（{{jisseki.product_support}}）</td>
+                    </tr>
+                  </table>
+                </mat-card-content>
               </mat-card>
             </mat-tab>
           </mat-tab-group>
