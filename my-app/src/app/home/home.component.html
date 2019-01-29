@@ -4,7 +4,7 @@
       <mat-card-title>お知らせ</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <p>{{infomation}}</p>
+      <p *ngFor="let item of infomation;">{{item}}</p>
     </mat-card-content>
   </mat-card>
   <mat-nav-list>

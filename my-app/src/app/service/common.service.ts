@@ -14,12 +14,11 @@ export interface Response {
 })
 export class CommonService {
   constructor(private http: HttpClient) { }
-
   //RestAPIのURL
-  private apiEndPoint: string = 'http://localhost/BusinessWebAPI/api/Info';
+  private apiEndPoint: string = 'http://localhost/BusinessWebAPI/api';
 
   getInfomation(): Observable <Response> {
-    return this.http.get<Response>(this.apiEndPoint)
+    return this.http.get<Response>(this.apiEndPoint + '/Info')
             .pipe(
               catchError(this.handleError<Response>('getInfomation'))
             );

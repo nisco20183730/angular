@@ -17,7 +17,7 @@ export interface MenuElement {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  infomation: string;
+  infomation: string[];
 
   constructor(private common: CommonService) { }
 
