@@ -4,11 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+// HTTP クライアントのための import
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+
 // 追加
 import { HomeComponent } from './home/home.component';
 import { BaseComponent } from './base/base.component';
 import { DetailComponent } from './detail/detail.component';
 import { SearchComponent } from './search/search.component';
+import { CommonService } from './service/common.service';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -44,6 +48,8 @@ import { MatIconModule,
     RouterModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
+    HttpClientJsonpModule,
     ReactiveFormsModule,
     // Angular Material --------------------
     MatIconModule,
@@ -57,7 +63,9 @@ import { MatIconModule,
     MatTabsModule,
     MatToolbarModule,
   ],
-  providers: [],
+  providers: [
+    CommonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

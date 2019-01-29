@@ -4,7 +4,7 @@
       <mat-card-title>お知らせ</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <p>1/26はメンテナンスのため、全日使用できません。</p>
+      <p>{{infomation}}</p>
     </mat-card-content>
   </mat-card>
   <mat-nav-list>
@@ -15,8 +15,11 @@
       </button>
     </mat-list-item> -->
     <a mat-list-item routerLink="/search">カンバン表示（材番指定）</a>
+    <mat-divider></mat-divider>
     <a mat-list-item routerLink="/search">工番</a>
+    <mat-divider></mat-divider>
     <a mat-list-item routerLink="/search">見積</a>
+    <mat-divider></mat-divider>
     <a mat-list-item routerLink="/search">実績入力</a>
   </mat-nav-list>
   <hr>

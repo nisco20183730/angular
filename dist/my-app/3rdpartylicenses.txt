@@ -362,9 +362,9 @@ MIT
 
 @angular/material/list
 
-@angular/material/chips
-
 @angular/material/divider
+
+@angular/material/chips
 
 @angular/material/form-field
 
