@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, LOCALE_ID } from '@angular/core';
 import { CommonService } from '../service/common.service';
+import { UniqueSelectionDispatcher } from '@angular/cdk/collections';
+import { identifierName } from '@angular/compiler';
 
 export interface UserElement {
   user_id: string;
@@ -20,7 +22,7 @@ export class HomeComponent implements OnInit {
   infomation: string[];
 
   userAgent = navigator.userAgent;
-  
+
   constructor(private common: CommonService) { }
 
   ngOnInit() {

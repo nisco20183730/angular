@@ -31,6 +31,7 @@ import { MatIconModule,
           MatTabsModule,
           MatToolbarModule,
         } from '@angular/material';
+import {ScrollDispatchModule} from '@angular/cdk/scrolling'; 
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { MatIconModule,
     HttpClientModule,
     HttpClientJsonpModule,
     ReactiveFormsModule,
+    ScrollDispatchModule,
     // Angular Material --------------------
     MatIconModule,
     MatButtonModule,
