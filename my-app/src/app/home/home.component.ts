@@ -19,6 +19,8 @@ export interface MenuElement {
 export class HomeComponent implements OnInit {
   infomation: string[];
 
+  userAgent = navigator.userAgent;
+  
   constructor(private common: CommonService) { }
 
   ngOnInit() {
